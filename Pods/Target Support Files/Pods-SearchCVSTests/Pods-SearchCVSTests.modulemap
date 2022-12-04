@@ -1,0 +1,6 @@
+framework module Pods_SearchCVSTests {
+  umbrella header "Pods-SearchCVSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

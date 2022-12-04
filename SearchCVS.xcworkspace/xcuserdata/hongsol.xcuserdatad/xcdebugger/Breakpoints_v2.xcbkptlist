@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4048CCBF-AF1A-400F-AD0C-B8A0D5978BAF"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E6E757F-A175-4652-B78C-51D1F69B7669"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SearchCVS/Presentation/LocationInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "mapView(_:didUpdate:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E6E757F-A175-4652-B78C-51D1F69B7669 - e798ba3b1801e121"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SearchCVS.LocationInfoViewController.mapView(_: __C.MKMapView, didUpdate: __C.MKUserLocation) -&gt; ()"
+                  moduleName = "SearchCVS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hongsol/Documents/XcodeWorkSpaces/Fast/SearchCVS/SearchCVS/Presentation/LocationInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "3E6E757F-A175-4652-B78C-51D1F69B7669 - e798ba3b1801e121"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SearchCVS.LocationInfoViewController.mapView(_: __C.MKMapView, didUpdate: __C.MKUserLocation) -&gt; ()"
+                  moduleName = "SearchCVS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hongsol/Documents/XcodeWorkSpaces/Fast/SearchCVS/SearchCVS/Presentation/LocationInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
