@@ -17,9 +17,7 @@ import Then
 class LocationInfoViewController: UIViewController {
     let disposeBag = DisposeBag()
     
-    lazy var locationManager = CLLocationManager().then {
-        $0.delegate = self
-    }
+    let locationManager = CLLocationManager()
     
     lazy var mapView = MKMapView().then {
         $0.delegate = self
@@ -59,13 +57,18 @@ class LocationInfoViewController: UIViewController {
     }
     
     func bind(_ viewModel: LocationInfoViewModel) {
-        detailListBackgroundView.bind(viewModel.detailListBackgroundViewModel)
+        detailListBackgroundView
+            .bind(viewModel.detailListBackgroundViewModel)
         
         viewModel.setMapCenter
             .emit(to: mapView.rx.setMapCenterPoint)
             .disposed(by: disposeBag)
         
         viewModel.errorMessage
+            .emit(to: self.rx.presentAlert)
+            .disposed(by: disposeBag)
+        
+        viewModel.mapViewNoData
             .emit(to: viewModel.detailListBackgroundViewModel.shouldChangeStatusLabelText)
             .disposed(by: disposeBag)
         
@@ -95,6 +98,13 @@ class LocationInfoViewController: UIViewController {
         
         currentLocationButton.rx.tap
             .bind(to: viewModel.currentLocationButtonTapped)
+            .disposed(by: disposeBag)
+        
+        // CLLocationManagerDelegate와 Binding
+        locationManager.rx.didChangeAuthorization
+            .filter { $0 == .denied }
+            .map{ _ in MapViewError.locationAuthorizationDenied.localizedDescription }
+            .bind(to: viewModel.mapViewError)
             .disposed(by: disposeBag)
     }
     
@@ -154,28 +164,6 @@ extension LocationInfoViewController: MKMapViewDelegate {
             }
             return nil
         }
-}
-
-extension LocationInfoViewController: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus {
-        case .authorizedAlways, .authorizedWhenInUse, .notDetermined:
-            return
-        default:
-            viewModel.mapViewError.accept(MapViewError.locationAuthorizationDenied.localizedDescription)
-            return
-        }
-    }
-}
-
-extension Reactive where Base: MKMapView {
-    var setMapCenterPoint: Binder<CLLocationCoordinate2D> {
-        return Binder(base) { base, point in
-            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            let region = MKCoordinateRegion(center: point, span: span)
-            base.setRegion(region, animated: true)
-        }
-    }
 }
 
 extension Reactive where Base: LocationInfoViewController {

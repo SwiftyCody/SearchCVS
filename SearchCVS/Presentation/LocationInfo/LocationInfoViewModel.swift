@@ -20,6 +20,7 @@ struct LocationInfoViewModel {
     // ViewModel -> View
     let setMapCenter: Signal<CLLocationCoordinate2D>
     let errorMessage: Signal<String>
+    let mapViewNoData: Signal<String>
     let detailListCellData: Driver<[DetailListCellData]>
     let scrollToSelectedLocation: Signal<Int> // table row
     
@@ -51,18 +52,27 @@ struct LocationInfoViewModel {
         let cvsLocationDataErrorMessage = cvsLocationDataResult
             .compactMap { data -> String? in
                 switch data {
-                case let .success(data) where data.documents.isEmpty:
-                    return """
-                    🤔
-                    500m 근처에 편의점이 없습니다.
-                    지도 위치를 옮겨서 재검색해주세요.
-                    """
                 case let .failure(error):
                     return error.localizedDescription
                 default:
                     return nil
                 }
             }
+        
+        mapViewNoData = cvsLocationDataResult
+            .compactMap { data -> String? in
+                switch data {
+                case let .success(data) where data.documents.isEmpty:
+                    return """
+                    🤔
+                    500m 근처에 편의점이 없습니다.
+                    지도 위치를 옮겨서 재검색해주세요.
+                    """
+                default:
+                    return nil
+                }
+            }
+            .asSignal(onErrorJustReturn: "잠시 후 다시 시도해주세요.")
         
         cvsLocationDataValue
             .map { $0.documents }
