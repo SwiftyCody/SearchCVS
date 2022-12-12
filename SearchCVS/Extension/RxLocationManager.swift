@@ -2,7 +2,7 @@
 //  RxLocationManager.swift
 //  SearchCVS
 //
-//  Created by solgoon on 2022/12/04.
+//  Created by Cody on 2022/12/04.
 //
 
 import Foundation

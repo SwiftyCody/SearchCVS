@@ -106,6 +106,15 @@ class LocationInfoViewController: UIViewController {
             .map{ _ in MapViewError.locationAuthorizationDenied.localizedDescription }
             .bind(to: viewModel.mapViewError)
             .disposed(by: disposeBag)
+        
+//        // MapViewDelegate와 Binding
+//        mapView.rx.regionDidChange
+//            .bind(to: viewModel.mapCenterPoint)
+//            .disposed(by: disposeBag)
+//
+//        mapView.rx.didUpdateUserLocation
+//            .bind(to: viewModel.currentLocation)
+//            .disposed(by: disposeBag)
     }
     
     private func attribute() {
