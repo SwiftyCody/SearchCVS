@@ -82,13 +82,7 @@ struct LocationInfoViewModel {
         // 지도 중심 설정
         let selectDetailListItem = detailListItemSelected
             .withLatestFrom(documentData) { $1[$0] }
-            .map { data -> CLLocationCoordinate2D in
-                guard let longitude = Double(data.x), let latitude = Double(data.y) else {
-                    return CLLocationCoordinate2D()
-                }
-                
-                return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            }
+            .map(model.documentToCoordinate)
         
         let moveToCurrentLocation = currentLocationButtonTapped
             .withLatestFrom(currentLocation) // currentLocation을 한번이라도 받은 이후
