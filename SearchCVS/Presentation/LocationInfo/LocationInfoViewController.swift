@@ -168,7 +168,7 @@ extension LocationInfoViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             if let annotation = annotation as? CVSAnnotation {
                 let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "CVSAnnotation")
-                view.image = UIImage(systemName: "pin.circle.fill")
+                view.image = UIImage(systemName: "mappin.and.ellipse")
                 return view
             }
             return nil
