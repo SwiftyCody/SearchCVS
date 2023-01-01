@@ -1,5 +1,5 @@
 //
-//  LocationInformationModelTests.swift
+//  LocationInforModelTests.swift
 //  SearchCVSTests
 //
 //  Created by Cody on 2022/12/13.
@@ -10,7 +10,7 @@ import Nimble
 
 @testable import SearchCVS
 
-final class LocationInformationModelTests: XCTestCase {
+final class LocationInfoModelTests: XCTestCase {
     let stubNetwork = KakaoLocalNetworkStub()
     
     var doc: [KLDocument]!

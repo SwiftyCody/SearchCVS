@@ -107,14 +107,14 @@ class LocationInfoViewController: UIViewController {
             .bind(to: viewModel.mapViewError)
             .disposed(by: disposeBag)
         
-//        // MapViewDelegate와 Binding
-//        mapView.rx.regionDidChange
-//            .bind(to: viewModel.mapCenterPoint)
-//            .disposed(by: disposeBag)
+        // MapViewDelegate와 Binding
+        mapView.rx.regionDidChange
+            .bind(to: viewModel.mapCenterPoint)
+            .disposed(by: disposeBag)
 //
-//        mapView.rx.didUpdateUserLocation
-//            .bind(to: viewModel.currentLocation)
-//            .disposed(by: disposeBag)
+        mapView.rx.didUpdateUserLocation
+            .bind(to: viewModel.currentLocation)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
@@ -147,15 +147,15 @@ class LocationInfoViewController: UIViewController {
 }
 
 extension LocationInfoViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        if let location = userLocation.location {
-            viewModel.currentLocation.accept(location.coordinate)
-        }
-    }
+//    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+//        if let location = userLocation.location {
+//            viewModel.currentLocation.accept(location.coordinate)
+//        }
+//    }
     
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        viewModel.mapCenterPoint.accept(mapView.centerCoordinate)
-    }
+//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+//        viewModel.mapCenterPoint.accept(mapView.centerCoordinate)
+//    }
     
     func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
         viewModel.selectAnnotation.accept(annotation)

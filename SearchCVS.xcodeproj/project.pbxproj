@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E3D4F582947CE6100FAABA6 /* LocationInformationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D4F572947CE6100FAABA6 /* LocationInformationModelTests.swift */; };
+		0E3D4F582947CE6100FAABA6 /* LocationInfoModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D4F572947CE6100FAABA6 /* LocationInfoModelTests.swift */; };
 		0E3D4F742949190000FAABA6 /* LocationInfoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D4F732949190000FAABA6 /* LocationInfoViewModelTests.swift */; };
 		0E47CC8F293800290092F077 /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47CC8E293800290092F077 /* LocationInfoViewModel.swift */; };
 		0E735A2C2936B2D7001968C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735A2B2936B2D7001968C4 /* AppDelegate.swift */; };
@@ -58,7 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E3D4F572947CE6100FAABA6 /* LocationInformationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInformationModelTests.swift; sourceTree = "<group>"; };
+		0E3D4F572947CE6100FAABA6 /* LocationInfoModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoModelTests.swift; sourceTree = "<group>"; };
 		0E3D4F732949190000FAABA6 /* LocationInfoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModelTests.swift; sourceTree = "<group>"; };
 		0E47CC8E293800290092F077 /* LocationInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModel.swift; sourceTree = "<group>"; };
 		0E735A282936B2D7001968C4 /* SearchCVS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchCVS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +185,7 @@
 				0EAFB6DB293D468C00453773 /* KakaoLocalNetworkStub.swift */,
 				0EAFB6DD293D48D300453773 /* KakaoLocalNetworkDummy.json */,
 				0EAFB6DF293D49AD00453773 /* KakaoLocalNetworkDummy.swift */,
-				0E3D4F572947CE6100FAABA6 /* LocationInformationModelTests.swift */,
+				0E3D4F572947CE6100FAABA6 /* LocationInfoModelTests.swift */,
 				0E3D4F732949190000FAABA6 /* LocationInfoViewModelTests.swift */,
 			);
 			path = SearchCVSTests;
@@ -561,7 +561,7 @@
 				0EAFB6DC293D468C00453773 /* KakaoLocalNetworkStub.swift in Sources */,
 				0EAFB6E0293D49AD00453773 /* KakaoLocalNetworkDummy.swift in Sources */,
 				0E3D4F742949190000FAABA6 /* LocationInfoViewModelTests.swift in Sources */,
-				0E3D4F582947CE6100FAABA6 /* LocationInformationModelTests.swift in Sources */,
+				0E3D4F582947CE6100FAABA6 /* LocationInfoModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
