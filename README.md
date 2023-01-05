@@ -7,5 +7,7 @@
     - RxSwift
     - RxCocoa
     - RxRelay
+    - RxTest
+    - Stubber
     - SnapKit
     - Then

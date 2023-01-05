@@ -38,7 +38,7 @@ final class LocationInfoViewModelTests: XCTestCase {
         
         // 더미데이터의 이벤트
         let dummyDataEvent = scheduler.createHotObservable([
-            .next(0, cvsList) // 0초에 cvsList를 통신으로 cvsList를 받은 것처럼 설정
+            .next(0, cvsList) // 0초에 cvsList(더미데이터)를 통신으로 받은 것처럼 설정
         ])
         
         let documentData = PublishSubject<[KLDocument]>()
@@ -46,11 +46,12 @@ final class LocationInfoViewModelTests: XCTestCase {
             .subscribe(documentData)
             .disposed(by: disposeBag)
         
-        // DetailList 아이템(셀) 탭  이벤트
+        // DetailList 아이템(셀) 탭 이벤트
         let itemSelectedEvent = scheduler.createHotObservable([
             .next(1, 0) // 1초에 0번째 셀이 선택된 것처럼 설정
         ])
         
+        // 선택된 셀 row에 따른 Data 세팅
         let itemSelected = PublishSubject<Int>()
         itemSelectedEvent
             .subscribe(itemSelected)
@@ -89,7 +90,6 @@ final class LocationInfoViewModelTests: XCTestCase {
             .withLatestFrom(initialCurrentLocation)
         
         // merge
-        
         let currentMapCenter = Observable
             .merge(
                 selectedItemMapPoint,
