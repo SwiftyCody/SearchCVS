@@ -97,6 +97,7 @@ final class LocationInfoViewModelTests: XCTestCase {
                 moveToCurrentLocation
             )
         
+        // 위에서 등록한 Observable들(의 coordinate.latitude값)을 검증을 위한 Observer 생성
         let currentMapCenterObserver = scheduler.createObserver(Double.self)
         
         currentMapCenter
